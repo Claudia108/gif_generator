@@ -1,15 +1,9 @@
-<h1>Welcome!</h1>
-
-<p>
-  <%= link_to "New User", new_user_path %>
-</p>
+<h2>Welcome!</h2>
+<h3>Please login</h3>
 
 <%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :sessions_username %>
-  <%= f.text_field :sessions_username %>
-
-  <%= f.label :sessions_password %>
-  <%= f.password_field :sessions_password %>
+  <%= f.text_field :username, placeholder: "Username" %>
+  <%= f.password_field :password, placeholder: "Placeholder" %>
 
   <%= f.submit "Login" %>
 <% end %>

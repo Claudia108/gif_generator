@@ -4,6 +4,7 @@ require 'rails/test_help'
 require 'minitest/pride'
 require 'capybara/rails'
 require 'pry-rails'
+require 'mocha/test_unit'
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
@@ -15,6 +16,7 @@ class ActionDispatch::IntegrationTest
 
   def teardown
     reset_session!
+    ApplicationController.any_instance.unstub(:current_user)
   end
 end
   # Add more helper methods to be used by all tests here...
