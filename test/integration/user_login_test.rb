@@ -7,8 +7,8 @@ class UserLoginTest < ActionDispatch::IntegrationTest
 
     visit root_path
 
-    fill_in "user_username", with: "Leon"
-    fill_in "user_password", with: "password"
+    fill_in "username", with: "Leon"
+    fill_in "password", with: "password"
     click_button "Login"
 
     assert_equal gifs_path, current_path
