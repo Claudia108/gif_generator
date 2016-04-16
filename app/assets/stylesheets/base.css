@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 35px;
+}
+
+
+nav {
+  background: #aa2244;
+  color: white;
+  padding: 8px 0px;
+
+}
+
+nav p, nav a {
+  margin: 0px;
+  padding: 0px 10px 0px 0px;
+  color: white;
+  display: inline;
+}
+
+p, p a {
+  font-family: 'Libre Baskerville', serif;
+}
+
+.wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.flash {
+  margin: 0;
+  font-family: 'Libre Baskerville', serif;
+  color: white;
+  padding: 8px 0px;
+}
+
+.flash-error {
+  background-color: #dd8535;
+  opacity: 0.85;
+
+}
+
+.flash-create {
+  background-color: #558a12;
+  opacity: 0.75;
+}
+
+.flash-logout {
+  background-color: #dfb914;
+  opacity: 0.85;
+}
+
+.flash-login {
+  background-color: #558a12;
+  opacity: 0.75;
+}
