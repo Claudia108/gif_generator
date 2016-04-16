@@ -1,6 +1,7 @@
 class Admin::CategoriesController < Admin::BaseController
 
   def index
+    @categories = Category.all
   end
 
   def new
@@ -16,10 +17,16 @@ class Admin::CategoriesController < Admin::BaseController
       flash[:error] = "Please try again."
       render :new
     end
+  end
 
-    def show
-      @category = Category.find(params[:id])
-    end
+  def show
+    @category = Category.find(params[:id])
+  end
+
+  def destroy
+    category = Category.find(params[:id]).destroy
+    flash[:logout] = "The category '#{category.name}' has been deleted."
+    redirect_to admin_categories_path
   end
 
   private
