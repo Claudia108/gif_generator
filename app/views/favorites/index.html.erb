@@ -1,0 +1,10 @@
+<h2>Favorited Gifs</h2>
+
+<% current_user.categories.each do |category| %>
+  <h3><%= category.name %></h3>
+  <% current_user.gifs.each do |gif| %>
+    <% if gif.category.name == category.name %>
+      <img src="<%= gif.image_path %>">
+    <% end %>
+  <% end %>
+<% end %>

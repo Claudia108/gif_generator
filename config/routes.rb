@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
   resources :gifs, only: [:index]
+  resources :favorites, only: [:new, :create, :index, :show, :destroy]
 
   namespace :admin do
     resources :categories, only: [:index, :new, :show, :create, :destroy] do

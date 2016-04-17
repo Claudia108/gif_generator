@@ -1,1 +1,10 @@
 <h2>All Gifs</h2>
+
+<h3> <%= link_to "Favorite Your Gifs", new_favorite_path %> </h3>
+
+<% @categories.each do |category| %>
+  <h3><%= category.name %></h3>
+  <% category.gifs.each do |gif| %>
+    <img src="<%= gif.image_path %>">
+  <% end %>
+<% end %>
