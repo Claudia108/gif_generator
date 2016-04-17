@@ -1,0 +1,9 @@
+<h2>Search result for: '<%= @category.name %>' </h2>
+
+<%= form_for(@gifs, url: admin_category_gifs_path) do |f| %>
+  <p><%= f.submit "Generate Gifs" %></p>
+  <% @potential_gifs.each_with_index do |gif_url, index| %>
+    <input type="checkbox" name="<%= index + 1 %>" value="<%= gif_url %>"><img src="<%= gif_url %>">
+    <% if (index + 1)%4 == 0 %><br><% end %>
+  <% end %>
+<% end %>

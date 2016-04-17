@@ -5,6 +5,9 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(username: params[:session][:username])
+    # if require_admin
+    #   flash[:login] = "Welcome, you are logged in as an admin."
+    #   redirect_to categories_path
     if @user && @user.authenticate(params[:session][:password])
       flash[:login] = "Welcome, you are logged in."
       session[:user_id] = @user.id

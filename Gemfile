@@ -27,6 +27,10 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Unicorn as the app server
 gem 'unicorn'
 
+# to import Giphy gifs
+gem 'faraday'
+gem 'json'
+
 gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
