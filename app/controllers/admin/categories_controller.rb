@@ -12,7 +12,7 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.new(category_params)
     if @category.save
       flash[:create] = "Category successfully created."
-      redirect_to admin_category_path(@category.id)
+      redirect_to new_admin_category_gif_path(@category.id)
     else
       flash[:error] = "Please try again."
       render :new

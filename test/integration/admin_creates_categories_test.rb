@@ -9,10 +9,10 @@ class AdminCreatesCategoriesTest < ActionDispatch::IntegrationTest
 
     new_category = "kitten"
     fill_in "category[name]", with: new_category
-    click_button "Create Category"
+    click_button "Search"
 
-    assert_equal admin_category_path(Category.last.id), current_path
-    assert page.has_content?("Your New Category")
+    assert_equal new_admin_category_gif_path(Category.last.id), current_path
+    # assert page.has_content?("Your New Category")
     assert page.has_content?("kitten")
   end
 
@@ -21,9 +21,9 @@ class AdminCreatesCategoriesTest < ActionDispatch::IntegrationTest
     admin_login
 
     click_link "Delete"
-
-    refute page.has_content?("kitten")
-
+    within("main") do
+      refute page.has_content?("kitten")
+    end
   end
 
   def admin_login
