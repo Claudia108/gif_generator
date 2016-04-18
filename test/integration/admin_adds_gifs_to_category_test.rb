@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class AdminAddsGifsToCategoryTest < ActionDispatch::IntegrationTest
-  test "admin can select gifs" do
+  test "admin can favorite gifs" do
     admin_login
 
     visit new_admin_category_path
