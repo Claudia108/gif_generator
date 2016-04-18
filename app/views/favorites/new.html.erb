@@ -2,6 +2,7 @@
 
 <%= form_for @favorites do |f| %>
   <% @categories.each do |category| %>
+  <%= f.submit "Favorite Gifs" %>
     <h3><%= category.name %></h3>
     <% category.gifs.each.with_index do |gif, index| %>
         <input type="checkbox" name="<%= "#{category.name}#{index + 1}" %>" value="<%= gif.image_path %>">
@@ -9,5 +10,4 @@
         <% if (index + 1)%4 == 0 %><br><% end %>
     <% end %>
   <% end %>
-  <%= f.submit "Favorite Gifs" %>
 <% end %>

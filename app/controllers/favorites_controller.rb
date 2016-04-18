@@ -7,6 +7,7 @@ class FavoritesController < ApplicationController
   def create
     create_favorites
     redirect_to favorites_path
+    flash[:create] = "Your favorites have been added."
   end
 
   def index
@@ -15,6 +16,7 @@ class FavoritesController < ApplicationController
 
   def destroy
     Favorite.find(params[:id]).destroy
+    flash[:error] = "Your favorite has been removed."
     redirect_to favorites_path
   end
 

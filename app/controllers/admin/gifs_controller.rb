@@ -15,7 +15,7 @@ class Admin::GifsController < Admin::BaseController
 
   def get_urls
     urls = []
-    1.upto(25) do |num|
+    1.upto(40) do |num|
       urls << params["#{num}"]
     end
     urls.compact

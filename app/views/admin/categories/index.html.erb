@@ -5,6 +5,8 @@
 
 <% @categories.each do |category| %>
   <p><%= link_to category.name, admin_category_path(category.id) %>
+    <div class="remove-link">
     <%= link_to "Delete", admin_category_path(category.id), method: :delete %>
+  </div>
   </p>
 <% end %>

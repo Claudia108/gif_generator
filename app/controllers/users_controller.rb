@@ -7,9 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:create] ="Success! Your account has been created."
+      flash[:create] = "Success! Your account has been created."
       redirect_to gifs_path
     else
+      flash[:error] = @user.errors.full_messages.join(", ")
       render :new
     end
   end
