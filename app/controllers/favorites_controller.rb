@@ -20,7 +20,7 @@ class FavoritesController < ApplicationController
 
   private
 
-def create_favorites
+  def create_favorites
     favorited_urls = get_favorited_urls
     favorited_gifs = get_favorited_gifs(favorited_urls)
     favorited_gifs.each do |gif|
