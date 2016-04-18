@@ -1,0 +1,15 @@
+<h2>Favorited Gifs</h2>
+
+<% current_user.categories.each do |category| %>
+  <h3><%= category.name %></h3>
+  <% current_user.gifs.each.with_index do |gif, index| %>
+    <% if gif.category.name == category.name %>
+    <div class="index-images">
+      <img src="<%= gif.image_path %>">
+      <div class="remove-link">
+        <%= link_to "Unfavorite Gif", favorite_path(Favorite.find_by(user_id: current_user.id, gif_id: gif.id).id), method: :delete, id: "#{index+1}-delete" %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+<% end %>

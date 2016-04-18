@@ -7,6 +7,7 @@ class Admin::GifsController < Admin::BaseController
 
   def create
     save_gifs(get_urls)
+    flash[:create] = "New gifs have been added."
     redirect_to admin_category_path(params[:category_id])
   end
 

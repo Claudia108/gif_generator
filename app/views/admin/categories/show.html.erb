@@ -1,6 +1,7 @@
-<h2>Your New Category</h2>
+<h2>Category: '<%= @category.name %>'</h2>
 
-<h3><%= @category.name %></h3>
+<h3><%= link_to "All Categories", admin_categories_path %></h3>
+
 
 <% @category.gifs.each_with_index do |gif, index|  %>
   <img src="<%= gif.image_path %>">
