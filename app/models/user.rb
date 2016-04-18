@@ -7,5 +7,4 @@ class User < ActiveRecord::Base
   enum role: %w(default admin)
 
   validates :username, presence: true, uniqueness: true
-  validates :password, presence: true
 end
